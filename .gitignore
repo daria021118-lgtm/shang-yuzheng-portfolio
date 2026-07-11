@@ -1,0 +1,39 @@
+# dependencies
+/node_modules/
+/.pnpm-store/
+
+# Next.js build output
+/.next/
+/out/
+
+# local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# deployment and hosting metadata
+.vercel/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Original source materials are preserved locally but are not required at runtime.
+# The optimized copies used by the site live in public/.
+/IMG_0480.JPG
+/武汉大学研究生-尚雨正-最快7月中旬到岗-每周五天可持续六个月.pdf
+/喜帖/
+/coze/
+/火山杯.PNG

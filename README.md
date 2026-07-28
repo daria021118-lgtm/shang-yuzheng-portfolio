@@ -1,92 +1,87 @@
-# 尚雨正｜运营作品集
+# Daria's space
 
-面向商品运营、电商运营和产品运营岗位的中文个人简历与作品集网站。网站采用响应式单页结构，重点呈现内容运营、数据分析、商品策划和项目执行能力。
+尚雨正的中文创意运营作品集。网站以东京夜景、霓虹灯牌和克制的赛博朋克视觉为方向，用深夜色、霓虹粉、紫色和青色呈现内容运营、商品运营、产品运营与 AI 创意实践。
 
 ## 技术栈
 
-- Next.js 16（App Router）
 - React 19
+- Vite 7
 - TypeScript
-- Tailwind CSS 3
+- GSAP（Card Swap 动画）
+- Decrypted Text × Text Pressure 首屏组合标题
+- 原生 CSS（定制响应式视觉系统）
 - pnpm
 
-网站为纯静态内容展示，不包含登录、数据库、后台或服务端业务接口。
+网站为静态单页，不包含登录、数据库或后台。
 
-## 页面内容
+## 页面结构
 
-- 个人简介与求职方向
-- 代表性成果摘要
-- 项目案例卡片
-- “背景—目标—行动—结果—复盘”案例详情
-- 实习、校园和教育经历
-- 能力与工具
-- 邮箱、电话和简历下载
+- 全屏 Hero：品牌名称、角色定位、作品入口与影片舞台
+- 角色介绍：可拖动、随页面滚动轻微弹跳并回弹的 Lanyard 胸像证件牌
+- 作品案例：基于 React Bits Card Swap 的堆叠案例卡片与弹窗详情
+- PixelBlast 背景：从角色介绍开始覆盖页面，首屏视频保持纯净；点击或拖动可产生像素涟漪
+- 互动体验：内容、数据、AI 三种能力视角
+- 联系方式：邮箱与电话
+- 全站循环 BGM：默认 30% 音量，支持播放、暂停与弹性音量调节
+
+案例详情按“背景—目标—行动—结果—复盘”组织。未获得依据的信息均使用明确占位文案，没有补写虚构数据。
 
 ## 项目结构
 
 ```text
 .
-├── app/
-│   ├── globals.css        # 全局样式和响应式规则
-│   ├── layout.tsx         # 页面元信息与根布局
-│   └── page.tsx           # 首页入口
-├── components/
-│   └── Portfolio.tsx      # 作品集内容、项目数据和案例交互
-├── public/
-│   ├── profile.jpg        # 个人照片
-│   ├── resume.pdf         # 下载版简历
-│   └── *.png              # 项目案例图片
+├── public/              # 公开图片、简历及后续视频
+├── src/
+│   ├── App.tsx          # 页面内容、项目数据和交互
+│   ├── main.tsx         # React 入口
+│   ├── styles.css       # 视觉与响应式样式
+│   └── vite-env.d.ts    # Vite 类型声明
+├── index.html
 ├── package.json
-├── pnpm-lock.yaml
-├── tailwind.config.ts
-└── tsconfig.json
+├── tsconfig.json
+└── vite.config.ts
 ```
-
-根目录中的原始简历和项目素材用于内容整理，不参与网站运行，并已通过 `.gitignore` 排除。网站实际使用的公开资源均位于 `public/`。
 
 ## 本地运行
 
-建议使用 Node.js 20.9 或更高版本，并安装 pnpm。
+建议使用 Node.js 20.19+ 和 pnpm。
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-开发服务器启动后访问：
+浏览器访问终端显示的地址，默认是 `http://localhost:5173`。
 
-```text
-http://localhost:3000
-```
+## 主题人物与视频
 
-## 生产环境测试
+- `public/daria-character-cutout.png`：透明背景的网站主题动漫人物
+- `public/character-intro.mp4`：首屏角色登场背景视频
+- `public/ai-film.mp4`：AI 影像实验案例视频
+- `public/daria-bgm.mp3`：网站循环背景音乐
+
+## 生产构建与预览
 
 ```bash
 pnpm build
-pnpm start
+pnpm preview
 ```
 
-`pnpm build` 会执行生产编译和 TypeScript 类型检查。构建成功后，`pnpm start` 默认在 `http://localhost:3000` 提供生产版本。
+构建产物输出到 `dist/`。
 
-## 部署到 Vercel
+## 部署
 
-1. 将项目上传至 GitHub。
-2. 登录 [Vercel](https://vercel.com)，选择 **Add New → Project**。
-3. 导入对应的 GitHub 仓库。
-4. Framework Preset 保持为 **Next.js**。
-5. Install Command 使用 `pnpm install`，Build Command 使用 `pnpm build`。
-6. 当前项目不需要配置环境变量。
-7. 点击 **Deploy**。以后推送到主分支时，Vercel 会自动重新部署。
+Vercel 导入 GitHub 仓库后应自动识别 Vite：
 
-## 上线前隐私提醒
-
-公开网站当前会展示求职联系邮箱和手机号码；`public/resume.pdf` 还包含出生年月。它们均来自现有简历资料，没有测试账号、API 密钥或虚构数据。正式公开前，请再次确认是否接受这些信息被搜索引擎和访客访问；如需降低公开范围，可替换为专用求职邮箱、隐藏手机号，并上传删除出生年月后的简历版本。
+- Build Command：`pnpm build`
+- Output Directory：`dist`
+- Install Command：`pnpm install`
 
 ## 内容维护
 
-- 修改个人信息、项目文字或案例数据：编辑 `components/Portfolio.tsx`。
-- 修改颜色、排版或响应式布局：编辑 `app/globals.css`。
-- 更新简历：用新文件覆盖 `public/resume.pdf`，保持文件名不变。
-- 更新图片：替换 `public/` 中对应文件，并保持引用路径一致。
+- 修改文字、项目数据与交互：`src/App.tsx`
+- 修改视觉与移动端布局：`src/styles.css`
+- 更新简历：覆盖 `public/resume.pdf`
+- 更新案例图片：替换 `public/` 中对应文件并保持引用路径
 
-所有项目业绩和数据都应以可验证资料为依据，不应添加未经证实的经历或结果。
+公开网站包含求职邮箱、手机号码和可下载简历。正式上线前请再次确认这些信息的公开范围。

@@ -2,7 +2,8 @@
 /node_modules/
 /.pnpm-store/
 
-# Next.js build output
+# build output
+/dist/
 /.next/
 /out/
 
@@ -27,8 +28,13 @@ Thumbs.db
 .idea/
 .vscode/
 
-# TypeScript cache
+# TypeScript and Vite cache
 *.tsbuildinfo
+.vite/
+.cache/
+.turbo/
+coverage/
+/tmp/
 
 # Original source materials are preserved locally but are not required at runtime.
 # The optimized copies used by the site live in public/.
@@ -37,3 +43,9 @@ Thumbs.db
 /喜帖/
 /coze/
 /火山杯.PNG
+/素材参考/
+/AI制作视频/
+/账号/
+/图片作品展示/
+/面试.pdf
+/音频-1分12秒.mp3

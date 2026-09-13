@@ -28,6 +28,7 @@ type Project = {
   evidence?: { src: string; alt: string }[];
   promptSystem?: string;
   storyboard?: { shot: string; title: string; scene: string }[];
+  proofVideos?: { src: string; title: string; note: string }[];
 };
 
 type VisualItem = {
@@ -39,8 +40,60 @@ type VisualItem = {
 
 const projects: Project[] = [
   {
-    id: "ai-film",
+    id: "furever-dock",
     number: "01",
+    label: "OVERSEAS GROWTH · INSTAGRAM",
+    title: "Furever Dock 海外内容增长",
+    description: "从海外趋势研究、创意原型到爆款复盘，搭建桌面宠物产品的内容测试闭环。",
+    video: "/furever-dock/tutorial.mp4",
+    metrics: ["200万+ 播放", "5.77万 点赞", "1万+ 当日新增"],
+    sections: [
+      {
+        label: "背景",
+        content:
+          "2026 年 7—9 月在上海洛拉帕路扎科技有限公司参与 Furever Dock 海外内容营销体系搭建。产品以桌面宠物为核心，需要在 TikTok、Instagram 上快速验证可传播的使用场景。",
+      },
+      {
+        label: "目标",
+        content:
+          "建立从热点与竞品研究、场景策划、内容制作到数据复盘的日常工作流，用低成本内容测试识别高潜场景，并支持后续 KOL 合作与产品判断。",
+      },
+      {
+        label: "行动",
+        content:
+          "独立策划并制作产品教程；围绕 Hook、BGM、壁纸、宠物形象和标题等变量批量测试。复盘爆款结构后沉淀可复用模板，并应用于后续 KOL 内容 brief。使用 GPT、AI 视频生成工具与 CapCut 快速完成创意原型和成片。",
+      },
+      {
+        label: "结果",
+        content:
+          "教程 Reels 获 200 万+播放、57.7K（约 5.77 万）点赞，带动当日软件新增用户 1 万+；“桌面清洁助手”内容获 120K（约 12 万）点赞。因后台播放量暂不可见，后者按 2%—5%点赞/播放比估算约 240 万—600 万播放，区间仅作参考。",
+      },
+      {
+        label: "复盘",
+        content:
+          "教程内容验证了“低理解成本 Hook＋真实桌面场景＋明确操作路径”的转化价值；清洁助手则说明用户会对宠物陪伴之外的功能想象主动反馈。下一步应保留发布后台截图，并统一记录播放、分享、收藏、主页访问与新增用户的时间窗口。",
+      },
+    ],
+    evidence: [
+      { src: "/furever-dock/tutorial-proof.png", alt: "Furever Dock 教程 Reels 发布截图与点赞证明" },
+      { src: "/furever-dock/cleanup-proof.png", alt: "桌面清洁助手 Reels 发布截图与点赞证明" },
+    ],
+    proofVideos: [
+      {
+        src: "/furever-dock/tutorial.mp4",
+        title: "爆款教程",
+        note: "200万+播放 · 5.77万点赞 · 当日新增1万+",
+      },
+      {
+        src: "/furever-dock/cleanup.mp4",
+        title: "桌面清洁助手",
+        note: "12万+点赞 · 估算240万—600万播放（非后台数据）",
+      },
+    ],
+  },
+  {
+    id: "ai-film",
+    number: "02",
     label: "AI FILM · KLING",
     title: "AI 影像实验",
     description: "使用可灵完成的角色影像创作，把静态人物设定推进为具有叙事感的动态画面。",
@@ -109,7 +162,7 @@ const projects: Project[] = [
   },
   {
     id: "heytea",
-    number: "02",
+    number: "03",
     label: "CONTENT STRATEGY",
     title: "喜茶「喜帖」热点内容",
     description: "从产品创新点和用户社交分享需求切入，完成选题、素材拍摄、体验展示与发布。",
@@ -129,7 +182,7 @@ const projects: Project[] = [
   },
   {
     id: "coze",
-    number: "03",
+    number: "04",
     label: "AI PRODUCT",
     title: "Coze 品牌导购智能体",
     description: "搭建商品知识库、多平台话术工作流与历史价格对比能力。",
@@ -144,7 +197,7 @@ const projects: Project[] = [
   },
   {
     id: "volcano",
-    number: "04",
+    number: "05",
     label: "PRODUCT CONCEPT",
     title: "食堂美食文案推荐器",
     description: "围绕校园餐饮消费场景，完成需求拆解、推荐逻辑、功能流程与文案展示。",
@@ -436,14 +489,30 @@ function App() {
               <h3>ABOUT ME</h3>
               <h4>对新事物保持好奇，也享受把想法推进到底。</h4>
               <p>
-                武汉大学信息管理学院出版专业硕士在读。关注内容、文化与用户之间的连接，
-                也会从音乐、游戏、户外活动和旅行中持续收集新的观察与灵感。
+                武汉大学信息管理学院出版专业硕士在读。关注内容、产品与用户之间的连接，
+                具备国内内容运营与海外社交平台实战经验，也会从音乐、游戏、户外活动和旅行中持续收集新的观察与灵感。
               </p>
               <a href="/resume.pdf" download>
                 DOWNLOAD RESUME <b>↗</b>
               </a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="experience-strip section-shell" aria-labelledby="latest-experience-title">
+        <div className="experience-strip-index">LATEST EXPERIENCE / 2026.07—2026.09</div>
+        <div className="experience-strip-main">
+          <p>上海洛拉帕路扎科技有限公司</p>
+          <h2 id="latest-experience-title">海外内容运营 / 海外市场运营</h2>
+          <span>参与 Furever Dock 海外内容营销体系搭建</span>
+        </div>
+        <div className="experience-strip-tags" aria-label="工作内容">
+          <span>TikTok / Instagram 趋势研究</span>
+          <span>短视频策划与制作</span>
+          <span>爆款复盘与变量测试</span>
+          <span>KOL Content Brief</span>
+          <span>GPT / AI Video / CapCut</span>
         </div>
       </section>
 
@@ -530,9 +599,54 @@ function App() {
           <p>从工作账号的稳定执行，到个人账号的兴趣表达与平台试验。</p>
         </div>
 
+        <article className="furever-account-case">
+          <div className="account-case-topline">
+            <span>01 / LATEST WORK ACCOUNT</span>
+            <b>FUREVER DOCK · INSTAGRAM / TIKTOK</b>
+          </div>
+          <div className="furever-case-layout">
+            <div className="furever-case-copy">
+              <p className="account-platform">OVERSEAS CONTENT / 2026.07—2026.09</p>
+              <h3>把桌面宠物功能，转译成全球用户愿意观看和讨论的内容。</h3>
+              <p className="account-summary">
+                持续研究 TikTok、Instagram 热点、用户偏好与竞品内容，围绕桌面宠物功能策划可传播场景；
+                独立完成教程与“桌面清洁助手”内容，并把爆款结构沉淀为后续测试模板和 KOL brief。
+              </p>
+              <div className="account-metrics furever-metrics">
+                <div><strong>200万+</strong><span>教程 Reels 播放</span></div>
+                <div><strong>5.77万</strong><span>教程 Reels 点赞</span></div>
+                <div><strong>1万+</strong><span>发布当日软件新增用户</span></div>
+                <div><strong>12万+</strong><span>清洁助手 Reels 点赞</span></div>
+              </div>
+              <div className="account-responsibilities">
+                <span>海外趋势研究</span><span>场景策划</span><span>Hook 测试</span>
+                <span>CapCut 剪辑</span><span>数据复盘</span><span>KOL Brief</span>
+              </div>
+              <p className="account-boundary">
+                DATA NOTE / 教程播放量与新增用户为实习期间记录；截图显示 57.7K 点赞。清洁助手截图显示 120K 点赞，
+                播放量按 2%—5%点赞/播放比估算约 240万—600万，非后台数据。
+              </p>
+            </div>
+            <div className="furever-video-grid">
+              <article>
+                <video muted loop playsInline controls preload="metadata" poster="/furever-dock/tutorial-proof.png">
+                  <source src="/furever-dock/tutorial.mp4" type="video/mp4" />
+                </video>
+                <div><span>01 / TUTORIAL</span><b>爆款产品教程</b><small>200万+播放 · 5.77万点赞</small></div>
+              </article>
+              <article>
+                <video muted loop playsInline controls preload="metadata" poster="/furever-dock/cleanup-proof.png">
+                  <source src="/furever-dock/cleanup.mp4" type="video/mp4" />
+                </video>
+                <div><span>02 / FEATURE CONCEPT</span><b>桌面清洁助手</b><small>12万+点赞 · 播放量为估算区间</small></div>
+              </article>
+            </div>
+          </div>
+        </article>
+
         <article className="work-account-case">
           <div className="account-case-topline">
-            <span>01 / WORK ACCOUNT</span>
+            <span>02 / WORK ACCOUNT</span>
             <b>湖北华图教育 · 小红书内容运营</b>
           </div>
 
@@ -588,7 +702,7 @@ function App() {
 
         <div className="personal-account-heading">
           <div>
-            <span>02 / PERSONAL CHANNELS</span>
+            <span>03 / PERSONAL CHANNELS</span>
             <h3>兴趣表达，也是小型内容实验。</h3>
           </div>
           <p>
@@ -869,6 +983,27 @@ function App() {
                       ))}
                     </div>
                   )}
+                </div>
+              )}
+              {activeProject.proofVideos && (
+                <div className="case-proof-block">
+                  <div className="prompt-system-heading">
+                    <span>CONTENT PROOF</span>
+                    <h3>实习产出与发布结果</h3>
+                  </div>
+                  <div className="case-proof-videos">
+                    {activeProject.proofVideos.map((item) => (
+                      <article key={item.src}>
+                        <video muted loop playsInline controls preload="metadata">
+                          <source src={item.src} type="video/mp4" />
+                        </video>
+                        <div>
+                          <b>{item.title}</b>
+                          <span>{item.note}</span>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
                 </div>
               )}
               {activeProject.evidence && (

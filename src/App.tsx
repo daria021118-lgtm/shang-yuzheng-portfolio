@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "Furever Dock 海外内容增长",
     description: "从海外趋势研究、创意原型到爆款复盘，搭建桌面宠物产品的内容测试闭环。",
     video: "/furever-dock/tutorial.mp4",
-    metrics: ["200万+ 播放", "5.77万 点赞", "1万+ 当日新增"],
+    metrics: ["700K 浏览", "57.7K 点赞", "1万+ 当日新增"],
     sections: [
       {
         label: "背景",
@@ -66,7 +66,7 @@ const projects: Project[] = [
       {
         label: "结果",
         content:
-          "教程 Reels 获 200 万+播放、57.7K（约 5.77 万）点赞，带动当日软件新增用户 1 万+；“桌面清洁助手”内容获 120K（约 12 万）点赞。因后台播放量暂不可见，后者按 2%—5%点赞/播放比估算约 240 万—600 万播放，区间仅作参考。",
+          "教程 Reels 获 700K 浏览、57.7K 点赞，带动当日软件新增用户 1 万+；“桌面清洁助手”Reels 获 717K 浏览、61.1K 点赞。数据均按现有发布记录更新。",
       },
       {
         label: "复盘",
@@ -82,12 +82,12 @@ const projects: Project[] = [
       {
         src: "/furever-dock/tutorial.mp4",
         title: "爆款教程",
-        note: "200万+播放 · 5.77万点赞 · 当日新增1万+",
+        note: "700K 浏览 · 57.7K 点赞 · 当日新增1万+",
       },
       {
         src: "/furever-dock/cleanup.mp4",
         title: "桌面清洁助手",
-        note: "12万+点赞 · 估算240万—600万播放（非后台数据）",
+        note: "717K 浏览 · 61.1K 点赞",
       },
     ],
   },
@@ -234,8 +234,8 @@ const lenses = [
     index: "03",
     title: "AI 工具",
     english: "AI TOOLS",
-    text: "可使用生成式 AI 辅助商品资料整理、竞品信息汇总、营销文案生成、运营报告搭建与智能体工作流设计。",
-    tags: "ChatGPT · Claude · Gemini · Coze",
+    text: "可使用 GPT 辅助热点研究、创意发散与内容脚本搭建，并结合 AI 视频生成工具和 CapCut 快速完成创意原型、视频制作与多方向内容测试。",
+    tags: "GPT · AI 视频生成 · CapCut · 创意原型 · 内容测试",
   },
   {
     key: "visual",
@@ -607,38 +607,37 @@ function App() {
           <div className="furever-case-layout">
             <div className="furever-case-copy">
               <p className="account-platform">OVERSEAS CONTENT / 2026.07—2026.09</p>
-              <h3>把桌面宠物功能，转译成全球用户愿意观看和讨论的内容。</h3>
+              <TrueFocusTitle
+                className="furever-focus-title"
+                phrases={["把桌面宠物功能，", "转译成全球用户", "愿意观看和讨论的内容。"]}
+              />
               <p className="account-summary">
                 持续研究 TikTok、Instagram 热点、用户偏好与竞品内容，围绕桌面宠物功能策划可传播场景；
                 独立完成教程与“桌面清洁助手”内容，并把爆款结构沉淀为后续测试模板和 KOL brief。
               </p>
               <div className="account-metrics furever-metrics">
-                <div><strong>200万+</strong><span>教程 Reels 播放</span></div>
-                <div><strong>5.77万</strong><span>教程 Reels 点赞</span></div>
+                <div><strong>700K</strong><span>教程 Reels 浏览</span></div>
+                <div><strong>57.7K</strong><span>教程 Reels 点赞</span></div>
                 <div><strong>1万+</strong><span>发布当日软件新增用户</span></div>
-                <div><strong>12万+</strong><span>清洁助手 Reels 点赞</span></div>
+                <div><strong>717K / 61.1K</strong><span>清洁助手浏览 / 点赞</span></div>
               </div>
               <div className="account-responsibilities">
                 <span>海外趋势研究</span><span>场景策划</span><span>Hook 测试</span>
                 <span>CapCut 剪辑</span><span>数据复盘</span><span>KOL Brief</span>
               </div>
-              <p className="account-boundary">
-                DATA NOTE / 教程播放量与新增用户为实习期间记录；截图显示 57.7K 点赞。清洁助手截图显示 120K 点赞，
-                播放量按 2%—5%点赞/播放比估算约 240万—600万，非后台数据。
-              </p>
             </div>
             <div className="furever-video-grid">
               <article>
                 <video muted loop playsInline controls preload="metadata" poster="/furever-dock/tutorial-proof.png">
                   <source src="/furever-dock/tutorial.mp4" type="video/mp4" />
                 </video>
-                <div><span>01 / TUTORIAL</span><b>爆款产品教程</b><small>200万+播放 · 5.77万点赞</small></div>
+                <div><span>01 / TUTORIAL</span><b>爆款产品教程</b><small>700K 浏览 · 57.7K 点赞</small></div>
               </article>
               <article>
                 <video muted loop playsInline controls preload="metadata" poster="/furever-dock/cleanup-proof.png">
                   <source src="/furever-dock/cleanup.mp4" type="video/mp4" />
                 </video>
-                <div><span>02 / FEATURE CONCEPT</span><b>桌面清洁助手</b><small>12万+点赞 · 播放量为估算区间</small></div>
+                <div><span>02 / FEATURE CONCEPT</span><b>桌面清洁助手</b><small>717K 浏览 · 61.1K 点赞</small></div>
               </article>
             </div>
           </div>
@@ -706,7 +705,7 @@ function App() {
             <h3>兴趣表达，也是小型内容实验。</h3>
           </div>
           <p>
-            三个平台均为个人日常账号，并非完整商业运营项目。这里保留真实的兴趣属性，
+            两个平台均为个人日常账号，并非完整商业运营项目。这里保留真实的兴趣属性，
             重点观察不同内容在不同平台上的反馈，以及为目标岗位主动进行的内容适配。
           </p>
         </div>
@@ -770,30 +769,6 @@ function App() {
             </div>
           </article>
 
-          <article className="platform-card platform-instagram">
-            <div className="platform-card-media">
-              <img
-                src="/account-media/instagram-profile.jpg"
-                alt="Instagram 个人主页与 AI 猫咪 Reels 截图"
-              />
-              <span>INSTAGRAM</span>
-            </div>
-            <div className="platform-card-copy">
-              <div className="platform-card-title">
-                <span>03</span>
-                <h4>Instagram｜Reels 试验</h4>
-              </div>
-              <p>
-                为适应目标岗位的海外平台内容需求，开始将自制 AI 猫咪视频发布到 Reels，
-                作为跨平台内容适配与英文环境观察的起点。
-              </p>
-              <div className="platform-stats">
-                <span><b>7</b>当前帖子</span>
-                <span><b>51</b>当前粉丝</span>
-                <span><b>AI CAT</b>Reels 内容试验</span>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 

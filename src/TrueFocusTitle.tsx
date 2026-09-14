@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
-const phrases = ["把考试热点", "转化为", "持续更新的内容选题。"];
+const defaultPhrases = ["把考试热点", "转化为", "持续更新的内容选题。"];
 
 type FocusRect = {
   x: number;
@@ -9,7 +9,15 @@ type FocusRect = {
   height: number;
 };
 
-export default function TrueFocusTitle() {
+type TrueFocusTitleProps = {
+  phrases?: string[];
+  className?: string;
+};
+
+export default function TrueFocusTitle({
+  phrases = defaultPhrases,
+  className = "",
+}: TrueFocusTitleProps) {
   const containerRef = useRef<HTMLHeadingElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,7 +65,7 @@ export default function TrueFocusTitle() {
 
   return (
     <h3
-      className="true-focus-title"
+      className={`true-focus-title ${className}`.trim()}
       ref={containerRef}
       onMouseLeave={() => setPaused(false)}
     >

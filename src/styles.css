@@ -1980,6 +1980,14 @@ video {
   line-height: 1.03;
 }
 
+.furever-case-copy .furever-focus-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.08em 0.18em;
+  position: relative;
+  isolation: isolate;
+}
+
 .furever-metrics {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -2267,7 +2275,7 @@ video {
 .personal-platform-grid {
   margin-top: 65px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
@@ -2386,10 +2394,6 @@ video {
   font-family: "DM Mono", monospace;
   font-size: 11px;
   font-weight: 500;
-}
-
-.platform-instagram .platform-card-media > img:first-child {
-  object-position: top center;
 }
 
 .visual-works {
@@ -3649,14 +3653,6 @@ video {
     grid-template-columns: 1fr 1fr;
   }
 
-  .platform-instagram {
-    grid-column: 1 / -1;
-  }
-
-  .platform-instagram .platform-card-media {
-    height: 520px;
-  }
-
   .visual-collection-heading {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -4092,12 +4088,7 @@ video {
     grid-template-columns: 1fr;
   }
 
-  .platform-instagram {
-    grid-column: auto;
-  }
-
-  .platform-card-media,
-  .platform-instagram .platform-card-media {
+  .platform-card-media {
     height: 440px;
   }
 
